@@ -52,30 +52,40 @@
         </plist>
     </ios>
     <android xmlns:android="http://schemas.android.com/apk/res/android">
-		<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.testapp" android:versionCode="1" android:versionName="1.0">
-			<uses-sdk android:minSdkVersion="10" android:targetSdkVersion="19"/>
-			<application android:icon="@drawable/appicon" android:label="TestApp" android:name="TestappApplication" android:debuggable="false" android:theme="@style/Theme.AppCompat">
-				<activity android:name=".TestappActivity" android:label="@string/app_name" android:theme="@style/Theme.Titanium" android:configChanges="keyboardHidden|orientation|screenSize">
-					<intent-filter>
-						<action android:name="android.intent.action.MAIN"/>
-						<category android:name="android.intent.category.LAUNCHER"/>
-					</intent-filter>
-				</activity>
-				<activity android:name="org.appcelerator.titanium.TiActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
-				<activity android:name="org.appcelerator.titanium.TiTranslucentActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@style/Theme.AppCompat.Translucent"/>
-				<activity android:name="ti.modules.titanium.ui.android.TiPreferencesActivity" android:configChanges="screenSize"/>
-				<activity android:name="com.facebook.LoginActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:label="TestApp" />
-				<service android:name="com.appcelerator.analytics.APSAnalyticsService" android:exported="false"/>
-				<meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
-			</application>
-			<uses-permission android:name="android.permission.INTERNET"/>
-			<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-			<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-			<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-			<uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/>
-		</manifest>
+        <manifest android:versionCode="1" android:versionName="1.0"
+            package="com.testapp" xmlns:android="http://schemas.android.com/apk/res/android">
+            <uses-sdk android:minSdkVersion="10" android:targetSdkVersion="19"/>
+            <application android:debuggable="false"
+                android:icon="@drawable/appicon" android:label="TestApp"
+                android:name="TestappApplication" android:theme="@style/Theme.AppCompat">
+                <activity
+                    android:configChanges="keyboardHidden|orientation|screenSize"
+                    android:label="@string/app_name"
+                    android:name=".TestappActivity" android:theme="@style/Theme.Titanium">
+                    <intent-filter>
+                        <action android:name="android.intent.action.MAIN"/>
+                        <category android:name="android.intent.category.LAUNCHER"/>
+                    </intent-filter>
+                </activity>
+                <activity
+                    android:configChanges="keyboardHidden|orientation|screenSize" android:name="org.appcelerator.titanium.TiActivity"/>
+                <activity
+                    android:configChanges="keyboardHidden|orientation|screenSize"
+                    android:name="org.appcelerator.titanium.TiTranslucentActivity" android:theme="@style/Theme.AppCompat.Translucent"/>
+                <activity android:configChanges="screenSize" android:name="ti.modules.titanium.ui.android.TiPreferencesActivity"/>
+                <activity android:label="TestApp"
+                    android:name="com.facebook.LoginActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+                <service android:exported="false" android:name="com.appcelerator.analytics.APSAnalyticsService"/>
+                <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
+            </application>
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+            <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/>
+        </manifest>
     </android>
     <mobileweb>
         <precache/>
@@ -86,8 +96,8 @@
         <theme>default</theme>
     </mobileweb>
     <modules>
-        <module platform="iphone">com.facebook</module>
-        <module platform="android">com.ti.facebook</module>
+        <module platform="android">facebook</module>
+        <module platform="iphone">facebook</module>
     </modules>
     <deployment-targets>
         <target device="android">true</target>
@@ -96,5 +106,5 @@
         <target device="iphone">true</target>
         <target device="mobileweb">false</target>
     </deployment-targets>
-    <sdk-version>3.4.2</sdk-version>
+    <sdk-version>3.5.1.GA</sdk-version>
 </ti:app>
